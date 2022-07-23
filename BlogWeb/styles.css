@@ -2,66 +2,117 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-    background-color: rgb(152, 205, 200);
-  margin: 0;
+  background-color: rgb(152, 205, 200);
   min-height: 100%;
   font-size: 16px;
   line-height: 2;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
     Lato, Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
-  position: relative;
+}
+html,body{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
 }
 div {
   display: block;
 }
+a{
+  transition: all 0.2s;
+  text-decoration: none;
+  cursor:pointer;
+}
+/*头部图片设置*/
+#page-header{
+  background-image: url(https://api.dujin.org/bing/1920.php);
+  background-color: rgb(168, 229, 229);
+  background-position-x: center;
+  background-position-y: center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position:relative;
+  width:100%;
+  height: 100vh;
+  transition:all 0.3s ;
+}
+/*添加阴影*/
+#page-header:not(.not-top-img):before{
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0,0.3);
+content: '';
+}
+/*顶部导行栏*/
 #nav {
   width: 0 auto;
   height: 60px;
   padding: 0 36px;
-  opacity: 1; /*不透明度*/
+  opacity: 1; /*完全不透明*/
   display: flex; /*相同长度*/
 }
+/*导航栏布局*/
 #blog-name {
   flex: 1; /*中间自适应*/
   height: 36px;
   margin: auto 0;
 }
 #menus {
-  background-color: rgb(207, 232, 232);
   flex: 1; /*自适应宽度*/
   height: 36px;
   margin: auto;
   max-width: 420px;
   display: inline-flex;
-}
+  list-style: none;
+}/*导航栏内容设置*/
 #site-name {
-  font-weight: bold;
   color: #ffffff;
-  text-decoration: none;
-  text-shadow: 2px 2px 4px rgb(0 0 0 / 15%);
-  cursor: pointer;
+  font-weight: bold;
   font-size: 1.3em;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 15%);
   margin: auto 0;
+  cursor: pointer;
 }
 .menu-item {
   height: 36px;
 }
-.site-page {
-  position: relative;
-  padding: 0 6px 0 14px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  font-size: 0.95em;
-  cursor: pointer;
-}
 #nav .site-page {
   position: relative;
-  padding-bottom: 6px;
+  padding: 0 6px 6px 6px;
+  color:#ffffff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   font-size: 0.95em;
   cursor: pointer;
   text-decoration: none;
+}
+/*顶部栏特效优化*/
+#menus .menu-item a:hover{
+  background-color:rgb(4,170,109);
+} 
+#nav a:hover{
   color:#ffffff;
 }
-#menus .menu-item a:hover{
-    background-color:aquamarine;
-} 
+
+#site-info{
+  margin:0 auto;/*水平居中*/
+  position:relative;/*脱离文档流*/
+  top:50%;
+  margin-top:-150px;
+}
+.site-title-common{
+  font-family: "Cormorant Garamond"; 
+  width:100%;
+  font-size:2.85em;
+  margin: 0;
+  text-align: center;
+  color:rgb(255,255,255);
+}
+#site-title{
+  font-weight: bold;
+}
+#scroll-down{
+  margin:50px 0;
+  font-weight:500;
+}
