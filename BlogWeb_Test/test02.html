@@ -7,11 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>北北的个人主页</title>
     <meta name="description" content="北北的个人主页">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="test02.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
 </head>
-
 <script>
     //时间控制
     window.addEventListener("DOMContentLoaded", () => {
@@ -99,17 +98,15 @@
     //时间控制
 </script>
 
-<body style="position: static;">
+<body size-sensor-id="1">
     <div class="page" id="body-wrap">
-        <header class="full_page" id="page-header" style="background-image: url('https://api.dujin.org/bing/1920.php')">
-            <nav id="nav" class="show" >
+        <header id="page-header" class="full-screen">
+            <nav id="nav" class="show">
                 <div id="blog-name">
-                    <a id="site-name" href="https://cn.bing.com/" target="_self">北北的个人主页</a>
+                    <a id="site-name" href="https://cn.bing.com/?scope=web" target="_self">北北的个人主页</a>
                 </div>
+                <!--菜单栏-->
             </nav>
-            <div id="menu">
-                <h1>这是菜单栏</h1>
-            </div>
             <div id="clock" class="clock" aria-label="00:00:00 AM">
                 <div class="clock__block clock__block--delay2" aria-hidden="true" data-time-group>
                     <div class="clock__digit-group">
@@ -144,12 +141,12 @@
             </div>
             <div id="scroll-down">
                 <h2 id="scroll-down-title" class="site-info-title">SCROLL DOWN</h2>
-                <i id="scroll-down-icon" class="fa fa-angle-down sroll-down-effects"></i>
+                <i id="scroll-down-icon" class="icon fa fa-angle-down sroll-down-effects"></i>
             </div>
         </header>
+        <main class="layout" id="content-inner"></main>
+        <footer id="footer"></footer>
     </div>
-    <div id="rightside">...</div>
-
 </body>
 
 </html>

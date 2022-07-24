@@ -1,0 +1,374 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  min-width: 100%;
+  height: 100vh;
+  margin: 0;
+  line-height: 2;
+  background: var(--global-bg);
+  color: var(--font-color);
+  font-size: var(--global-font-size);
+  font-family: Lato, Helvetica Neue For Number, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+div {
+  display: block;
+}
+a {
+    text-decoration: none;
+    word-wrap: break-word;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+    overflow-wrap: break-word;
+    cursor: pointer;
+  }
+#body-wrap {
+  display: box;
+  display: flex;
+  flex-direction: column;
+  min-width: 100vh;
+}
+/*头部*/
+#page-header {
+  position:relative;
+  height: 100vh;
+  width:100%;
+  background-attachment: fixed;
+  background-color: rgb(138, 225, 237);
+  background-image: url("https://api.dujin.org/bing/1920.php");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  transition: all 0.5s;
+}
+#page-header:not(.not-top-img):before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  content: '';
+}
+#page-header #site-info {
+  position: relative;
+  top: 43%;
+  padding: 0 5px;
+  width: 100%;
+}
+/*顶部导航栏*/
+#nav {
+  position: absolute;
+  top: 0;
+  z-index: 90;
+  display:box;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  padding: 0 36px;
+  filter: alpha(opacity=0);
+  align-items: center; /*居中对齐弹性盒子内各属性*/
+  opacity: 0; /*0完全透明，导航栏*/
+  font-size: 1.3em;
+  transition: all 0.5s;
+} 
+@media screen and (max-width: 768px) {
+  #nav {
+    padding: 0 16px;
+  }
+}/*顶部导航栏完全不透明*/
+#nav.show {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  transition: transform 0.3s;
+}
+#nav a:hover {
+  color: rgb(213, 253, 214);
+}
+#nav #site-info {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+  font-weight: bold;
+  cursor: pointer;
+}
+/*Bolg-name*/
+#nav #blog-name {
+  flex: 1;
+  box-flex:1;
+}
+#site-name {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 15%);
+  cursor: pointer;
+} /*theme开关*/
+#theme {
+  background-color: rgb(29, 76, 59);
+  flex: 1;
+}
+/*首页句子*/
+#site-info {
+  position: relative;
+  top: 46%;
+  margin-top: -50px;
+}
+#site-title {
+  font-size: 2.85em;
+  font-weight: 800;
+}
+.site-info-title {
+  font-family: "Cormorant Garamond";
+  width: 100%;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 15%);
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+#site-title-motto {
+  color: rgb(155, 155, 155);
+  margin: -20px auto 0 auto;
+  text-align: center;
+}
+/*下翻提示*/
+#scroll-down {
+  position: relative;
+  top: 75%;
+  text-align: center;
+  color: #ffffff;
+}
+#scroll-down-title {
+  font-size: 1.5em;
+} /*下翻图标及动画*/
+#scroll-down-icon {
+  width: 100%;
+  font-size: 30px;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 15%);
+  line-height: 1.5;
+  font-weight: 900;
+  animation-name: srcoll-down; /*动画名称*/
+  animation-duration: 1.5s; /*动画完成所需时间*/
+  animation-timing-function: ease; /*动画速度*/
+  animation-delay: 0s; /*延迟:规定动画从何时开始*/
+  animation-iteration-count: infinite; /*动画迭代次数无限*/
+  animation-direction: alternate; /*动画反向播放*/
+  animation-play-state: running; /*动画运行状态*/
+  /* Safari and Chrome: */
+  -webkit-animation-name: scroll-down;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-play-state: running;
+} /*下翻透明度动画*/
+@keyframes scroll-down {
+  0% {
+    top: 0;
+    opacity: 0.4;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+    transform: translateY(-20px);
+  }
+  50% {
+    top: -16px;
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  100% {
+    top: 0;
+    opacity: 0.4;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+    transform: translateY(0);
+  }
+}
+/*头部动画效果*/ /*
+@keyframes header-effect {
+    0% {
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      -webkit-transform: translateY(-50px);
+      -moz-transform: translateY(-50px);
+      -o-transform: translateY(-50px);
+      -ms-transform: translateY(-50px);
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      -ms-filter: none;
+      filter: none;
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+    }
+}*/
+
+/*所有的图标*/
+.icon {
+  cursor: pointer;
+}
+/*Time-Toggle*/
+:root {
+  --hue: 223;
+  --bg: hsl(var(--hue), 90%, 90%);
+  --fg: hsl(var(--hue), 10%, 10%);
+  --primary: hsl(var(--hue), 90%, 55%);
+  --trans-dur: 0.3s;
+  font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320));
+}
+#clock {
+  margin: 0;
+  padding: 0;
+  max-width: 550px;
+  position: absolue;
+  top: 25%;
+  left: 35%;
+}
+.clock {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.clock__block {
+  background-color: hsl(var(--hue), 10%, 90%);
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 2rem hsla(var(--hue), 90%, 50%, 0.3);
+  font-size: 3em;
+  line-height: 2;
+  margin: 0.75rem;
+  overflow: hidden;
+  text-align: center;
+  width: 6rem;
+  height: 6rem;
+  transition: background-color var(--trans-dur), box-shadow var(--trans-dur);
+}
+.clock__block--small {
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 2rem hsla(var(--hue), 90%, 50%, 0.3);
+  font-size: 20px;
+  margin-bottom: 5%;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 50%);
+  line-height: 3;
+  width: 3rem;
+  height: 3rem;
+}
+.clock__colon {
+  display: none;
+  font-size: 2em;
+  opacity: 0.5;
+  position: relative;
+}
+.clock__colon:before,
+.clock__colon:after {
+  background-color: currentColor;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -0.05em;
+  left: -0.05em;
+  width: 0.1em;
+  height: 0.1em;
+  transition: background-color var(--trans-dur);
+}
+.clock__colon:before {
+  transform: translateY(-200%);
+}
+.clock__colon:after {
+  transform: translateY(200%);
+}
+.clock__digit-group {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.clock__digits {
+  width: 100%;
+  height: 90px;
+  padding-top: 10px;
+}
+.clock__block--bounce {
+  animation: bounce 0.75s;
+}
+.clock__block--bounce .clock__digit-group {
+  animation: roll 0.75s ease-in-out forwards;
+  transform: translateY(-60%);
+}
+.clock__block--delay1,
+.clock__block--delay1 .clock__digit-group {
+  animation-delay: 0.1s;
+}
+.clock__block--delay2,
+.clock__block--delay2 .clock__digit-group {
+  animation-delay: 0.2s;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(var(--hue), 10%, 10%);
+    --fg: hsl(var(--hue), 10%, 90%);
+  }
+  .clock__block {
+    background-color: hsl(var(--hue), 90%, 40%);
+    box-shadow: 0 1rem 2rem hsla(var(--hue), 90%, 60%, 0.4);
+  }
+  .clock__block--small {
+    box-shadow: 0 0.5rem 2rem hsla(var(--hue), 90%, 60%, 0.4);
+  }
+}
+
+/* Beyond mobile */
+@media (min-width: 768px) {
+  .clock {
+    flex-direction: row;
+  }
+  .clock__colon {
+    display: inherit;
+  }
+}
+
+/* Animations */
+@keyframes bounce {
+  from,
+  to {
+    animation-timing-function: ease-in;
+    transform: translateY(0);
+  }
+  50% {
+    animation-timing-function: ease-out;
+    transform: translateY(15%);
+  }
+}
+@keyframes roll {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+/*time-toggle*/
+#nav {
+  background-color: rgb(155, 155, 155);
+}
+#clock {
+  background-color: rgb(176, 176, 255);
+}
+#site-info {
+  background-color: rgb(200, 122, 230);
+}
+#srcoll-down {
+  background-color: rgb(204, 132, 167);
+}
