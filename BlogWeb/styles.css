@@ -1,118 +1,198 @@
-html {
-  -webkit-text-size-adjust: 100%;
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  min-width: 100%;
+  height: 100vh;
+  margin: 0;
+  line-height: 2;
+  font-size: 14px;
+  font-family: Lato, Helvetica Neue For Number, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 body {
-  background-color: rgb(152, 205, 200);
-  min-height: 100%;
-  font-size: 16px;
-  line-height: 2;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
-    Lato, Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
-}
-html,body{
-  width:100%;
-  height:100%;
-  margin:0;
-  padding:0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: #4c4948;
 }
 div {
   display: block;
 }
-a{
-  transition: all 0.2s;
+a {
   text-decoration: none;
-  cursor:pointer;
 }
-/*头部图片设置*/
-#page-header{
-  background-image: url(https://api.dujin.org/bing/1920.php);
-  background-color: rgb(168, 229, 229);
-  background-position-x: center;
-  background-position-y: center;
-  background-size:cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  position:relative;
-  width:100%;
+/*头部*/
+#page-header {
+  /*属性*/
+  position: relative;
   height: 100vh;
-  transition:all 0.3s ;
+  overflow: visible;
+  /*本身*/
+  background-color: blanchedalmond;
+  background-image: url("https://api.dujin.org/bing/1920.php");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: #49b1f5;
+  transition: all 0.5s;
 }
-/*添加阴影*/
-#page-header:not(.not-top-img):before{
-position: absolute;
-width: 100%;
-height: 100%;
-background-color: rgba(0, 0, 0,0.3);
-content: '';
-}
-/*顶部导行栏*/
+/*
+nav id:nav
+    div id:blog-name
+        a id:site-name
+    label id:theme
+
+div id:menu
+    figure id:WelcomeMessage
+
+div id:site-info
+    h1 id:site-title class:site-info-title
+    h2 id:site-title-motto
+
+div id:scroll-down
+    h2 id:scroll-down-title class:site-info-title
+    i class:
+*/
+/*顶部导航栏*/
 #nav {
-  width: 0 auto;
+  background-color: rgb(57, 116, 116);
+  position: absolute;
+  top: 0;
+  display: flex;
+  width: 100%;
   height: 60px;
-  padding: 0 36px;
-  opacity: 1; /*完全不透明*/
-  display: flex; /*相同长度*/
-}
-/*导航栏布局*/
+  padding: 0 60px;
+  align-items: center; /*居中对齐弹性盒子内各属性*/
+  opacity: 1; /*0完全透明，导航栏应该是透明的*/
+  font-size: 1.3rem;
+} /*Bolg-name*/
 #blog-name {
-  flex: 1; /*中间自适应*/
-  height: 36px;
-  margin: auto 0;
+  flex: auto;
 }
-#menus {
-  flex: 1; /*自适应宽度*/
-  height: 36px;
-  margin: auto;
-  max-width: 420px;
-  display: inline-flex;
-  list-style: none;
-}/*导航栏内容设置*/
 #site-name {
   color: #ffffff;
   font-weight: bold;
-  font-size: 1.3em;
   text-shadow: 2px 2px 4px rgb(0 0 0 / 15%);
-  margin: auto 0;
   cursor: pointer;
+} /*theme开关*/
+#theme {
+  background-color: rgb(154, 183, 173);
+  flex: 1;
 }
-.menu-item {
-  height: 36px;
+/*Welcome菜单栏*/
+#menu {
+  margin-top: 1%;
+  background-color: rgb(182, 218, 237);
+  position: sticky;
+  top: 0px;
+  padding: 0 200px;
+  height: 100px;
 }
-#nav .site-page {
+/*首页句子*/
+#site-info {
   position: relative;
-  padding: 0 6px 6px 6px;
-  color:#ffffff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  font-size: 0.95em;
-  cursor: pointer;
-  text-decoration: none;
+  top: 46%;
+  margin-top: -50px;
 }
-/*顶部栏特效优化*/
-#menus .menu-item a:hover{
-  background-color:rgb(4,170,109);
-} 
-#nav a:hover{
-  color:#ffffff;
+#site-title {
+  font-size: 2.85em;
+  font-weight: 800;
 }
-
-#site-info{
-  margin:0 auto;/*水平居中*/
-  position:relative;/*脱离文档流*/
-  top:50%;
-  margin-top:-150px;
-}
-.site-title-common{
-  font-family: "Cormorant Garamond"; 
-  width:100%;
-  font-size:2.85em;
-  margin: 0;
+.site-info-title {
+  font-family: "Cormorant Garamond";
+  width: 100%;
+  text-shadow: 20x 2px 4px rgb(0 0 0 / 15%);
+  margin: 0 auto;
   text-align: center;
-  color:rgb(255,255,255);
+  color: rgb(255, 255, 255);
 }
-#site-title{
-  font-weight: bold;
+#site-title-motto {
+  color: rgb(155, 155, 155);
+  margin: -20px auto 0 auto;
+  text-align: center;
 }
-#scroll-down{
-  margin:50px 0;
-  font-weight:500;
+/*下翻提示*/
+#scroll-down {
+  position: relative;
+  top: 75%;
+  text-align: center;
+  color: #ffffff;
+}
+#scroll-down-title {
+  font-size: 1.5em;
+} /*下翻图标及动画*/
+#scroll-down-icon {
+  width: 100%;
+  font-size: 30px;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 15%);
+  line-height: 1.5;
+  font-weight: 900;
+  animation-name: srcoll-down; /*动画名称*/
+  animation-duration: 1.5s; /*动画完成所需时间*/
+  animation-timing-function: ease; /*动画速度*/
+  animation-delay: 0s; /*延迟:规定动画从何时开始*/
+  animation-iteration-count: infinite; /*动画迭代次数无限*/
+  animation-direction: alternate; /*动画反向播放*/
+  animation-play-state: running; /*动画运行状态*/
+  /* Safari and Chrome: */
+  -webkit-animation-name: scroll-down;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-play-state: running;
+} /*下翻透明度动画*/
+@keyframes scroll-down {
+  0% {
+    top: 0;
+    opacity: 0.4;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+    transform: translateY(-20px);
+  }
+  50% {
+    top: -16px;
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  100% {
+    top: 0;
+    opacity: 0.4;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+    transform: translateY(0);
+  }
+} 
+/*头部动画效果*/ /*
+@keyframes header-effect {
+    0% {
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      -webkit-transform: translateY(-50px);
+      -moz-transform: translateY(-50px);
+      -o-transform: translateY(-50px);
+      -ms-transform: translateY(-50px);
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      -ms-filter: none;
+      filter: none;
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+    }
+}*/
+
+/*所有的图标*/
+.icon {
+  cursor: pointer;
 }

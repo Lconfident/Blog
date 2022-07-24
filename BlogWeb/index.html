@@ -1,73 +1,39 @@
 <!DOCTYPE html>
-<lang="zh-CN">
+<html lang="zh-CN">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="北北的个人主页">
-        <title>北北的个人主页</title>
-        <link rel="stylesheet" href="styles.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北北的个人主页</title>
+    <meta name="description" content="北北的个人主页">
+    <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
-    </head>
+</head>
 
-    <body>
-        <div class="page" id="body-wrap">
-            <header id="page-header" class="full-page">
-                <nav id="nav">
-                    <span id="blog-name">
-                        <a id="site-name" href="/">北北的个人主页</a>
-                    </span>
-                    <div id="menus">
-                        <div class="menu-item icon" id="search-button">
-                            <a class="site-page" href="/">
-                                <i class="fas fa fa-search"></i>
-                                <span>搜索</span>
-                            </a>
-                        </div>
-                        <div class="menu-item icon">
-                            <a class="site-page" href="/">
-                                <i class="fas fa fa-home"></i>
-                                <span>主页</span>
-                            </a>
-                        </div>
-                        <div class="menu-item icon">
-                            <a class="site-page" href="/study">
-                                <i class="fas fa fa-graduation-cap"></i>
-                                <span>课程</span>
-                            </a>
-                        </div>
-                        <div class="menu-item icon">
-                            <a class="site-page" href="/book">
-                                <i class="fas fa fa-book"></i>
-                                <span>书架</span>
-                            </a>
-                        </div>
-                        <div class="menu-item icon">
-                            <a class="site-page" href="/recommend">
-                                <i class="fas fa fa-globe"></i>
-                                <span>推荐</span>
-                            </a>
-                        </div>
-                        <div class="menu-item icon">
-                            <a class="site-page" href="/about">
-                                <i class="fas fa fa-user"></i>
-                                <span>关于</span>
-                            </a>
-                        </div>
-                    </div>
-                </nav>
-                <div id="site-info">
-                    <h1 id="site-title" class="site-title-common">北北的个人主页</h1>
-                    <h2 id="scroll-down" class="site-title-common">SCROLL DOWN</h2>
-                </div>
-                <div>
-
-                </div>
-            </header>
-
+<body>
+    <header id="page-header" class="full-screen">
+        <nav id="nav">
+            <div id="blog-name">
+            <a id="site-name" href="https://cn.bing.com/?scope=web" target="_self">北北的个人主页</a>
+            </div>
+            <label id="theme" class="theme">这里是theme开关</label>
+        </nav>
+       
+        <div id="site-info">
+            <h1 id="site-title" class="site-info-title">北北的个人主页</h1>
+            <h2 id="site-title-motto">经不住似水流年，逃不过此间少年</h2>
         </div>
-    </body>
+        <div id="scroll-down">
+            <h2 id="scroll-down-title" class="site-info-title">SCROLL DOWN</h2> 
+            <i id="scroll-down-icon" class="icon fa fa-angle-down sroll-down-effects"></i>
+        </div>
+        <div id="menu">
+            <!--实际上是一个figure-->
+            <figure id="WelcomMessage">Welcome</figure>
+        </div>
+    </header>
+</body>
 
-    </html>
+</html>
