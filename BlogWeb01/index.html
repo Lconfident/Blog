@@ -8,8 +8,10 @@
     <title>北北的个人主页</title>
     <meta name="description" content="北北的个人主页">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page-menu.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
 
 <script>
@@ -102,7 +104,7 @@
 <body style="position: static;">
     <div class="page" id="body-wrap">
         <header class="full_page" id="page-header" style="background-image: url('https://api.dujin.org/bing/1920.php')">
-            <nav id="nav" class="show" >
+            <nav id="nav" class="show">
                 <div id="blog-name">
                     <a id="site-name" href="https://cn.bing.com/" target="_self">北北的个人主页</a>
                 </div>
@@ -144,10 +146,58 @@
                 <i id="scroll-down-icon" class="fa fa-angle-down sroll-down-effects"></i>
             </div>
         </header>
-        <main></main>
+        <main id="flex-container" class="layout">
+            <div class="flex-slide home" onmousemove="menuFunction()">
+                <div class="flex-title flex-title-home">Home</div>
+                <div class="flex-about flex-about-home">
+                    <p>Click here to navigate to the home section of the weebsite</p>
+                </div>
+            </div>
+            <div class="flex-slide book">
+                <div class="flex-title flex-title-book">Book</div>
+                <div class="flex-about flex-about-bok">
+                    <p>Click here to navigate to the book section of the website</p>
+                </div>
+            </div>
+            <div class="flex-slide work">
+                <div class="flex-title flex-title-work">Work</div>
+                <div class="flex-about flex-about-work">
+                    <p>Click here to navigate to the work section of the website</p>
+                </div>
+            </div>
+            <div class="flex-slide about">
+                <div class="flex-title flex-title-about">About</div>
+                <div class="flex-about flex-about-about">
+                    <p>Click here to navigate to the about section of the website</p>
+                </div>
+            </div>
+        </main>
+        <script>
+            //菜单页动画，jQuery语法
+            (function () {
+                $(".flex-slide").each(function () {
+                    $(this).hover(function () {
+                        $(this).find('.flex-title').css({
+                            transform: 'rotate(0deg)',
+                            top: '10%'
+                        });
+                        $(this).find('.flex-about').css({
+                            opacity: '1'
+                        });
+                    }, function () {
+                        $(this).find('.flex-title').css({
+                            transform: 'rotate(90deg)',
+                            top: '15%'
+                        });
+                        $(this).find('.flex-about').css({
+                            opacity: '0'
+                        });
+                    })
+                });
+            })();
+            //菜单页动画
+        </script>
     </div>
-    <div id="rightside">...</div>
-
 </body>
 
 </html>
