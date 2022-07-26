@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="web02.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>主页</title>
+</head>
+<script>
+    //点击页面后延迟3s跳转
+    setTimeout(function disappear(){document.getElementById("hello").style.display="none";},3000);
+</script>
+<body>
+    <!--开场-->
+    <div id="hello" onclick="disappear()">
+        <div id="hello-info">
+            <h3 id="hello-info01" class="start">Hello,</h3>
+            <h3 id="hello-info02" class="start">Weclome your coming.</h3>
+        </div>
+        <button id="go-button">Go</button>
+    </div>
+    <header></header>
+    <main>148648</main>
+    <footer></footer>
+</body>
+</html>
