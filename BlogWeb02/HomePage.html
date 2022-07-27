@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,19 +13,46 @@
 </head>
 <script>
     //点击页面后延迟3s跳转
-    setTimeout(function disappear(){document.getElementById("hello").style.display="none";},3000);
+    function disappear(){
+        setTimeout(function() { document.getElementById("start").style.display = "none"; }, 600);
+    }
 </script>
+
 <body>
-    <!--开场-->
-    <div id="hello" onclick="disappear()">
-        <div id="hello-info">
-            <h3 id="hello-info01" class="start">Hello,</h3>
-            <h3 id="hello-info02" class="start">Weclome your coming.</h3>
+    <!--start-->
+    <div onclick="disappear()" id="start">
+        <div class="container">
+            <h3 id="hello" class="typed-out">Hello,Welcome your coming...</h3>
         </div>
-        <button id="go-button">Go</button>
+        <button id="start-button" class="btn-6"><span>Read More</span></button>
     </div>
-    <header></header>
-    <main>148648</main>
+    <!--导航栏-->
+    <header class="head">
+        <div class="head_logo_div">
+            <img class="logo_img" src="https://cdn.worldvectorlogo.com/logos/bei-web-51784.svg"/>
+        </div>
+        <div class="head_nav_div">
+            <nav class="head_nav">
+                <ul id="nav_ul">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#softwork">SoftWork</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="home">
+            <div id="personal-card">
+                
+            </div>
+        </div>
+        <div id="schedule"></div>
+        <div id="softwork"></div>
+        <div id="contact"></div>
+    </main>
     <footer></footer>
 </body>
+
 </html>

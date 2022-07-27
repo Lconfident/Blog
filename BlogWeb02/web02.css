@@ -1,42 +1,223 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  width: 100%;
-  background-color: antiquewhite;
+html,body{
+  margin:0;
+  padding:0;
+  min-height:100vh;
+  width:100%;
 }
-#hello {
-  position: absolute;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  background-color: rgb(156, 90, 90);
+*::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
 }
-#hello-info {
-  position: relative;
-  top: 45%;
-  left: 40%;
-  max-width: 50%;
+#start{
+  height:100vh;
+  width:100%;
+  position:relative;
+  display: grid;
+  place-items: center;
+  top:0;
+  margin:0;
+  padding:0;
+  background-color: rgba(118,174,241,1);
+}
+.container{
+  display: inline-block;
+}
+.typed-out{
+  color:rgba(255, 221, 200, 0.8);
+  overflow: hidden;
+  border-right: .15em solid;
   white-space: nowrap;
+  animation: 
+  typing 2s steps(20, end) forwards,
+  blink 1s infinite;
+  font-size: 2em;
+  width: 0;
 }
-.start{
-    border-right: 3px solid;
-    font-family: monospace;
-    font-size: 2em;
-    animation: typing 2s steps(22),
-     blink 0.5s step-end infinite alternate;
-}
-#hello-info01{
-    font-size: large;
-}
+/*导出字符*/
 @keyframes typing {
-  from {
-    width: 0;
-  }
+  from {width:0}
+  to {width:100%}
 }
+/*闪烁右边框*/
 @keyframes blink {
-  50% {
+  50%{
     border-color: transparent;
   }
 }
+#start-button{
+  position:absolute;
+  top:65%;
+  text-align: center;
+  width: 130px;
+  height: 40px;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+#start-button{
+  background: rgb(247,150,192);
+  background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 100%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+}
+.btn-6 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-6:before,
+.btn-6:after {
+  position: absolute;
+  content: "";
+  height: 0%;
+  width: 1px;
+ box-shadow:
+   -1px -1px 20px 0px rgba(255,255,255,1),
+   -4px -4px 5px 0px rgba(255,255,255,1),
+   7px 7px 20px 0px rgba(0,0,0,.4),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+}
+.btn-6:before {
+  right: 0;
+  top: 0;
+  transition: all 500ms ease;
+}
+.btn-6:after {
+  left: 0;
+  bottom: 0;
+  transition: all 500ms ease;
+}
+.btn-6:hover{
+  background: transparent;
+  color: #76aef1;
+  box-shadow: none;
+}
+.btn-6:hover:before {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-6:hover:after {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-6 span:before,
+.btn-6 span:after {
+  position: absolute;
+  content: "";
+  box-shadow:
+   -1px -1px 20px 0px rgba(255,255,255,1),
+   -4px -4px 5px 0px rgba(255,255,255,1),
+   7px 7px 20px 0px rgba(0,0,0,.4),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+}
+.btn-6 span:before {
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: .5px;
+  transition: all 500ms ease;
+}
+.btn-6 span:after {
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: .5px;
+  transition: all 500ms ease;
+}
+.btn-6 span:hover:before {
+  width: 100%;
+}
+.btn-6 span:hover:after {
+  width: 100%;
+}
+/*已完成start*/
+.head{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index: 9;
+  background-color: rgba(235,235,235,1);
+  height:70px;
+  filter: alpha(opacity=90);
+  opacity: 0.9;
+}
+.head_logo_div{
+  float:left;
+  width:20%;
+  text-align: center;
+}
+.logo_img{
+  max-width: 45px;
+  height:45px;
+  margin:15px;
+}
+.head_nav_div{
+  float:left;
+  width:80%;
+  font-size: 16px;
+  height: 70px;
+  line-height: 70px;
+}
+.head_nav{
+  margin:0 auto;
+}
+
+.head_nav ul{
+  overflow:hidden;
+  list-style-type: none;
+  margin:0px;
+}
+.head_nav ul li{
+  float:left;
+  margin:0px 25px;
+  cursor:pointer;
+  font-size:16px;
+  text-align: center;
+}
+a{
+  text-decoration: none;
+  color:black;
+}
+.head_nav ul a:hover{
+  color: #76aef1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+/*导航栏展示完毕*/
+/*home页面*/
+#home{
+  position: relative;
+  height: 100vh;
+  width:100%;
+  background-image: url(https://github.com/Lconfident/Pictures/blob/main/f525a3b4f0d47c28b673a6061716a39.jpg?raw=true);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+#personal-card {
+  position: relative;
+  top:30%;
+  left:20%;
+  width: 200px;
+  height: 254px;
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe,
+              -15px -15px 30px #ffffff;
+ }
