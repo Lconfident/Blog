@@ -19,14 +19,17 @@
         <ul class="nav-list">
             <li class="nav-li"><a class="nav-a" href="#home">Home</a></li>
             <li class="nav-li"><a class="nav-a" href="#schedule">Schedule</a></li>
-            <li class="nav-li"><a class="nav-a" href="#work">Work</a></li>
-            <li class="nav-li"><a class="nav-a" href="#hobby">Hobby</a></li>
+            <li class="nav-li"><a class="nav-a" href="#study">Study</a></li>
+            <li class="nav-li"><a class="nav-a" href="#feelings">Feelings</a></li>
         </ul>
     </nav>
+    <div class="slip-downward">
+        <i class="fa fa-angle-down"></i>
+    </div>
 
     <main>
         <!--第一页home-->
-        <div class="home beibei fullpage">
+        <div id="home" class="home beibei fullpage">
             <img class="logo" alt="logo" src="https://pic2.zhimg.com/80/v2-a326fb65b8790c5029e3af387c01ed75_xl.jpg" />
             <h1 class="info-name animate-slide-in-down">北北</h1>
             <p class="info-description animate-slide-in-down">太原理工大学，软工大二在读</p>
@@ -58,49 +61,171 @@
         </div>
 
         <!--第二页schedule-->
-        <div class="schedule fullpage">
-            <div class="demo-preview">
+        <div id="schedule" class="schedule fullpage">
+            <div class="bar">
                 <div class="progress progress-striped active">
-                    <div role="progressbar progress-striped" style="width: 95%;" class="progress-bar">
-                        <span>HTML</span></div>
+                    <div role="progressbar progress-striped" style="width: 95%;" class="progress-bar progress-bar-html">
+                        <span>HTML</span>
+                    </div>
                 </div>
                 <div class="progress progress-striped active">
-                    <div role="progressbar " style="width: 90%;" class="progress-bar progress-bar-secondary">
-                        <span>CSS</span></div>
+                    <div role="progressbar " style="width: 90%;" class="progress-bar progress-bar-css">
+                        <span>CSS</span>
+                    </div>
                 </div>
                 <div class="progress progress-striped active">
-                    <div role="progressbar " style="width: 80%;" class="progress-bar progress-bar-default">
-                        <span>Java基础</span></div>
+                    <div role="progressbar " style="width: 80%;" class="progress-bar progress-bar-java">
+                        <span>Java基础</span>
+                    </div>
                 </div>
                 <div class="progress progress-striped active">
-                    <div role="progressbar " style="width: 70%;" class="progress-bar progress-bar-success">
-                        <span>Vim</span></div>
+                    <div role="progressbar " style="width: 70%;" class="progress-bar progress-bar-vim">
+                        <span>Vim</span>
+                    </div>
                 </div>
                 <div class="progress progress-striped active">
-                    <div role="progressbar " style="width: 40%;" class="progress-bar progress-bar-info">
-                        <span>算法</span></div>
+                    <div role="progressbar " style="width: 60%;" class="progress-bar progress-bar-python">
+                        <span>Python</span>
+                    </div>
                 </div>
                 <div class="progress progress-striped active">
-                    <div role="progressbar " style="width: 40%;" class="progress-bar progress-bar-warning">
-                        <span>Python</span></div>
+                    <div role="progressbar " style="width: 30%;" class="progress-bar progress-bar-suanfa">
+                        <span>算法</span>
+                    </div>
                 </div>
                 <div class="progress progress-striped active">
-                    <div role="progressbar" style="width: 40%;" class="progress-bar progress-bar-danger">
-                        <span>Cute</span></div>
+                    <div role="progressbar" style="width: 10%;" class="progress-bar progress-bar-Latex">
+                        <span>Latex</span>
+                    </div>
                 </div>
+            </div>
+            <div class="schedule-text">
+                <h1>一个愿望</h1>
+                <div class="overline"></div>
+                <p>在这个阳光的世界里，</p>
+                <p>我只需要花园的一张长椅</p>
+                <p>和晒着太阳的猫……</p>
+                <p>我将坐在那里，</p>
+                <p>怀里揣着一封短信，</p>
+                <p>一封很短很短的信。</p>
+                <p>这就是我的梦。</p>
+            </div>
+        </div>
+        <!--第三页work-->
+        <div id="study" class="study fullpage">
+            <div class="study-content">
+                <ul class="timeUI">
+                    <li>
+                        <div>
+                            <h1>C</h1>
+                            <p>《C Prime Plus》</p>
+                            <p>《C 和 指针》</p>
+                            <p><a
+                                    href="https://www.icourse163.org/course/ZJU-199001?from=searchPage&outVendor=zw_mooc_pcssjg_">大学mooc翁恺C
+                                    课程</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h1>Java</h1>
+                            <p><a href="https://github.com/Snailclimb/JavaGuide" target="_blank">Java基础知识</a></p>
+                            <p><a href="https://github.com/zaiyunduan123/Java-Summarize" target="_blank">Java核心知识</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h1>Web前端</h1>
+                            <p>
+                                <a href="https://github.com/Lconfident/Study-Note/tree/main/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0"
+                                    target="_blank">HTML+CSS+Javascript</a>
+                            </p>
+                            <p>
+                                <a href="https://github.com/521xueweihan/HelloGitHub" target="_blank">实战项目</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h1>Python<h1>
+                                    <P><a href="https://github.com/jackfrued/Python-100-Days"
+                                            target="_blank">Python100天</a>
+                                    </P>
+                                    <p><a href="https://github.com/Yixiaohan/codeparkshare" target="_blank">Python
+                                            指南</a></p>
+                                    <p>Python编程：从入门到实践</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            算法
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="left-slip">
+                <i class="fa fa-angle-left"></i>
+            </div>
+            <div class="right-slip">
+                <i class="fa fa-angle-right"></i>
             </div>
 
         </div>
-        <!--第三页work-->
-        <div class="work fullpage"></div>
         <!--第四页hobby-->
-        <div class="hobby fullpage"></div>
+        <div id="feelings" class="feelings fullpage">
+            <h1 class="feelings-title">Some Feelings</h1>
+            <ul class="feelings-list">
+                <li class="feelings-list-1">
+                    <a href="#">
+                        <br />
+                        <h2>很残酷的现实</h2>
+                        <h2>但不管怎么样</h2>
+                        <h2>明天又是新的一天</h2>
+                    </a>
+                </li>
+                <li class="feelings-list-2">
+                    <a href="#">
+                        <h2>ta不可能像你想象的那么好</h2>
+                        <h2>但也不会像你想象的那么糟</h2>
+                        <h2>迷途漫漫</h2>
+                        <h2>终有一归</h2>
+                    </a>
+                </li>
+                <li class="feelings-list-3">
+                    <a href="#">
+                        <h2>小王子，永远的梦</h2>
+                        <h2>只有用心去看，才能看到事实</h2>
+                        <h2>事情的真相只用眼睛是看不到的</h2>
+                        <img src="https://picx.zhimg.com/80/v2-a8db6c956c0271c522af278c35b4914b_r.jpg"
+                            class="img-max" />
+                    </a>
+                </li>
+                <li class="feelings-list-4">
+                    <a href="#">
+                        <img class="img-max"
+                            src="https://pic4.zhimg.com/80/v2-115d03e36c9b31046f8ac755221b0e53_r.jpg" />
+                    </a>
+                </li>
+            </ul>
+        </div>
     </main>
 
     <footer>
         <!--独白写于2022/07/31-->
+        <p class="foot-power">
+            ©2022 Powered by
+        </p>
+        <p>
+            北北
+        </p>
+        <p>主页已存活0000天00小时00分00秒</p>
     </footer>
 
 </body>
-
+<!--
+    还需要写图片旋转，悬浮显示二维码，
+    文本插入动画，study路线排版
+    文本放大，时间计时
+    下滑特效，返回首页按钮、特效
+-->
 </html>
