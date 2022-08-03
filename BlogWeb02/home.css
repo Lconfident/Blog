@@ -89,7 +89,7 @@ img.logo {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin-top: 100px;
+  margin-top:100px;
 }
 /*info-escription*/
 .info-description {
@@ -130,6 +130,7 @@ img.logo {
   font-size: 14px;
 }
 .links a {
+  font-size: 18px;
   display: inline-block;
   position: relative;
   margin-left: 25px;
@@ -496,3 +497,31 @@ footer {
   color: #eee;
   background-color: rgba(41, 59, 71, 0.836);
 }
+/*定位、颜色、布局完毕，添加动画*/
+/*====================================*/
+/*头像旋转动画*/
+img.logo {
+  -webkit-transition:  -webkit-transform 0.3s;
+  -moz-transition:  -moz-transform 0.3s;
+  -o-transition:  -o-transform 0.3s;
+  -ms-transition: -ms-transform 0.3s;
+  transition:  transform 0.3s;
+  object-fit: cover;
+}
+/*必须是作用于图片上，否则div旋转时出现问题*/
+img.logo:hover {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/*quote字体放大*/
+p.quote-content {
+  transition: all 1s;
+}
+p.quote-content:hover {
+  font-size:22px;
+}
+/*文本插入动画*/
+/*赶回火箭*/

@@ -9,8 +9,6 @@
     <title>Home</title>
     <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap">
-    <script src="https://cdn.staticfile.org/    jquery/1.10.2/jquery.min.js"></script>
 </head>
 
 <body>
@@ -46,10 +44,10 @@
                 <span class="quote-line quote-line-end animate-slide-in-right"></span>
             </div>
             <div class="links">
-                <a href="https://github.com/Lconfident " class="animate-slide-in-down">Github</a>
+                <a href="https://github.com/Lconfident " class="animate-slide-in-down" >Github</a>
                 <a href="https://www.writebug.com/" class="animate-slide-in-down">Blog</a>
-                <a href="#" class="animate-slide-in-down">QQ</a>
-                <a href="#" class="animate-slide-in-down">WeiXin</a>
+                <a href="#" class="animate-slide-in-down" onmousedown="erweima()">QQ</a>
+                <a href="#" class="animate-slide-in-down" onmousedown="erweima()">WeiXin</a>
                 <a href="mailto:liuyefei2004@outlook.com" classs="animate-slide-in-down">Email</a>
             </div>
             <div class="location">
@@ -59,7 +57,6 @@
                 <span class="location-text animate-slide-in-down">ShanXi - China</span>
             </div>
         </div>
-
         <!--第二页schedule-->
         <div id="schedule" class="schedule fullpage">
             <div class="bar">
@@ -220,12 +217,17 @@
         </p>
         <p>主页已存活0000天00小时00分00秒</p>
     </footer>
-
+<script>
+    function erweima(){
+        alert("不提供信息呐~但可以Email(●'◡'●)");
+    } 
+</script>
 </body>
 <!--
-    还需要写图片旋转，悬浮显示二维码，
+    还需要写
     文本插入动画，study路线排版
     文本放大，时间计时
     下滑特效，返回首页按钮、特效
 -->
+
 </html>
