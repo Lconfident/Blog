@@ -24,11 +24,15 @@
     <div class="slip-downward">
         <i class="fa fa-angle-down"></i>
     </div>
+    <div class="up">
+        <img onclick="topFunction()" id="myBtn" src="http://img.smyhvae.com/20180208-rocket.png" />
+    </div>
 
     <main>
         <!--第一页home-->
         <div id="home" class="home beibei fullpage">
-            <img class="logo" alt="logo" src="https://pic2.zhimg.com/80/v2-a326fb65b8790c5029e3af387c01ed75_xl.jpg" />
+            <img class="logo animate-slide-in-down" alt="logo"
+                src="https://pic2.zhimg.com/80/v2-a326fb65b8790c5029e3af387c01ed75_xl.jpg" />
             <h1 class="info-name animate-slide-in-down">北北</h1>
             <p class="info-description animate-slide-in-down">太原理工大学，软工大二在读</p>
             <div class="quote">
@@ -44,7 +48,7 @@
                 <span class="quote-line quote-line-end animate-slide-in-right"></span>
             </div>
             <div class="links">
-                <a href="https://github.com/Lconfident " class="animate-slide-in-down" >Github</a>
+                <a href="https://github.com/Lconfident " class="animate-slide-in-down">Github</a>
                 <a href="https://www.writebug.com/" class="animate-slide-in-down">Blog</a>
                 <a href="#" class="animate-slide-in-down" onmousedown="erweima()">QQ</a>
                 <a href="#" class="animate-slide-in-down" onmousedown="erweima()">WeiXin</a>
@@ -168,7 +172,7 @@
             </div>
 
         </div>
-        <!--第四页hobby-->
+        <!--第四页feelins-->
         <div id="feelings" class="feelings fullpage">
             <h1 class="feelings-title">Some Feelings</h1>
             <ul class="feelings-list">
@@ -215,19 +219,36 @@
         <p>
             北北
         </p>
-        <p>主页已存活0000天00小时00分00秒</p>
+        <p>主页已存活0001天00小时00分00秒</p>
     </footer>
-<script>
-    function erweima(){
-        alert("不提供信息呐~但可以Email(●'◡'●)");
-    } 
-</script>
+    <script>
+        /*二维码警告*/
+        function erweima() {
+            alert("不提供信息呐~但可以Email(●'◡'●)");
+        }
+        /*up火箭*/
+        // 当网页向下滑动 20px 出现"返回顶部" 按钮
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            console.log(121);
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+        // 点击按钮，返回顶部
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 </body>
 <!--
     还需要写
-    文本插入动画，study路线排版
-    文本放大，时间计时
-    下滑特效，返回首页按钮、特效
+home文本插入动画js实现
+study路线动画js实现
+时间js实现
 -->
 
 </html>

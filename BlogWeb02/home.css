@@ -523,5 +523,34 @@ p.quote-content {
 p.quote-content:hover {
   font-size:22px;
 }
-/*文本插入动画*/
-/*赶回火箭*/
+/*feelings图片放大*/
+li.feelings-list-3 img,
+li.feelings-list-4 img {
+  transition:all 1s;
+}
+li.feelings-list-3 img:hover,
+li.feelings-list-4 img:hover{
+  transform:scale(1.5,1.5);
+}
+ul.feelings-list li {
+  transform :all 1s;
+}
+ul.feelings-list li:hover{
+  transform: scale(1.5,1.5);
+}
+/*up火箭CSS+Js*/
+div.up {
+  position:fixed;
+  bottom:10em;
+  right:5em;
+}
+div.up img {
+  width:50px;
+  height:80px;
+  cursor:pointer;
+  transition:all 1s;
+}
+div.up img:hover{
+  transform:translate(0% ,-50%);
+}
+
